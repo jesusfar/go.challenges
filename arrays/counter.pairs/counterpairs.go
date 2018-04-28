@@ -16,6 +16,9 @@ func CounterPairs1(l []int, k int) int {
 	pairs := map[string]int{}
 
 	for i := 0; i < len(l); i++ {
+		if l[i] >= k {
+			continue
+		}
 		for j := i + 1; j < len(l); j++ {
 			key := strconv.Itoa(l[i]) + "," + strconv.Itoa(l[j])
 			keyInv := strconv.Itoa(l[j]) + "," + strconv.Itoa(l[i])
